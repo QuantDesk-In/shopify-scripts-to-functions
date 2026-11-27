@@ -1,0 +1,29 @@
+query CartDeliveryOptionsTransformRunInput($oversizedTags: [String!]!) {
+  cart {
+    deliveryGroups {
+      deliveryAddress {
+        address1
+        address2
+      }
+      cartLines {
+        merchandise {
+          __typename
+          ... on ProductVariant {
+            product {
+              hasAnyTag(tags: $oversizedTags)
+            }
+          }
+        }
+      }
+      deliveryOptions {
+        handle
+        title
+      }
+    }
+  }
+  deliveryCustomization {
+    metafield(namespace: "$app", key: "function-configuration") {
+      jsonValue
+    }
+  }
+}

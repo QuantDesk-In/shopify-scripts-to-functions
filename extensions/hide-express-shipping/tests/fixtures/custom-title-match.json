@@ -1,0 +1,58 @@
+{
+  "payload": {
+    "export": "cart-delivery-options-transform-run",
+    "target": "cart.delivery-options.transform.run",
+    "input": {
+      "cart": {
+        "deliveryGroups": [
+          {
+            "deliveryAddress": {
+              "address1": "12 King Street",
+              "address2": null
+            },
+            "cartLines": [
+              {
+                "merchandise": {
+                  "__typename": "ProductVariant",
+                  "product": {
+                    "hasAnyTag": true
+                  }
+                }
+              }
+            ],
+            "deliveryOptions": [
+              {
+                "handle": "h-std",
+                "title": "Standard"
+              },
+              {
+                "handle": "h-ups",
+                "title": "UPS Next Day Air"
+              }
+            ]
+          }
+        ]
+      },
+      "deliveryCustomization": {
+        "metafield": {
+          "jsonValue": {
+            "oversizedTags": [
+              "oversized"
+            ],
+            "hideTitleContains": "next day",
+            "hideForPoBox": true
+          }
+        }
+      }
+    },
+    "output": {
+      "operations": [
+        {
+          "deliveryOptionHide": {
+            "deliveryOptionHandle": "h-ups"
+          }
+        }
+      ]
+    }
+  }
+}

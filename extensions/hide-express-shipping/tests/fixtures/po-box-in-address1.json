@@ -1,0 +1,67 @@
+{
+  "payload": {
+    "export": "cart-delivery-options-transform-run",
+    "target": "cart.delivery-options.transform.run",
+    "input": {
+      "cart": {
+        "deliveryGroups": [
+          {
+            "deliveryAddress": {
+              "address1": "PO Box 4471",
+              "address2": null
+            },
+            "cartLines": [
+              {
+                "merchandise": {
+                  "__typename": "ProductVariant",
+                  "product": {
+                    "hasAnyTag": false
+                  }
+                }
+              }
+            ],
+            "deliveryOptions": [
+              {
+                "handle": "h-standard",
+                "title": "Standard"
+              },
+              {
+                "handle": "h-express",
+                "title": "Express"
+              },
+              {
+                "handle": "h-overnight",
+                "title": "Overnight Express"
+              }
+            ]
+          }
+        ]
+      },
+      "deliveryCustomization": {
+        "metafield": {
+          "jsonValue": {
+            "oversizedTags": [
+              "oversized"
+            ],
+            "hideTitleContains": "Express",
+            "hideForPoBox": true
+          }
+        }
+      }
+    },
+    "output": {
+      "operations": [
+        {
+          "deliveryOptionHide": {
+            "deliveryOptionHandle": "h-express"
+          }
+        },
+        {
+          "deliveryOptionHide": {
+            "deliveryOptionHandle": "h-overnight"
+          }
+        }
+      ]
+    }
+  }
+}

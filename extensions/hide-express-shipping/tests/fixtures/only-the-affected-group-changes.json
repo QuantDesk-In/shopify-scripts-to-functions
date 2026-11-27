@@ -1,0 +1,76 @@
+{
+  "payload": {
+    "export": "cart-delivery-options-transform-run",
+    "target": "cart.delivery-options.transform.run",
+    "input": {
+      "cart": {
+        "deliveryGroups": [
+          {
+            "deliveryAddress": {
+              "address1": "12 King Street",
+              "address2": null
+            },
+            "cartLines": [
+              {
+                "merchandise": {
+                  "__typename": "ProductVariant",
+                  "product": {
+                    "hasAnyTag": true
+                  }
+                }
+              }
+            ],
+            "deliveryOptions": [
+              {
+                "handle": "g1-express",
+                "title": "Express"
+              }
+            ]
+          },
+          {
+            "deliveryAddress": {
+              "address1": "12 King Street",
+              "address2": null
+            },
+            "cartLines": [
+              {
+                "merchandise": {
+                  "__typename": "ProductVariant",
+                  "product": {
+                    "hasAnyTag": false
+                  }
+                }
+              }
+            ],
+            "deliveryOptions": [
+              {
+                "handle": "g2-express",
+                "title": "Express"
+              }
+            ]
+          }
+        ]
+      },
+      "deliveryCustomization": {
+        "metafield": {
+          "jsonValue": {
+            "oversizedTags": [
+              "oversized"
+            ],
+            "hideTitleContains": "Express",
+            "hideForPoBox": true
+          }
+        }
+      }
+    },
+    "output": {
+      "operations": [
+        {
+          "deliveryOptionHide": {
+            "deliveryOptionHandle": "g1-express"
+          }
+        }
+      ]
+    }
+  }
+}
