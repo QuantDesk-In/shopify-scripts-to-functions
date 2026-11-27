@@ -1,0 +1,24 @@
+query CartPaymentMethodsTransformRunInput($customerTags: [String!]!) {
+  presentmentCurrencyRate
+  cart {
+    cost {
+      totalAmount {
+        amount
+      }
+    }
+    buyerIdentity {
+      customer {
+        hasAnyTag(tags: $customerTags)
+      }
+    }
+  }
+  paymentMethods {
+    id
+    name
+  }
+  paymentCustomization {
+    metafield(namespace: "$app", key: "function-configuration") {
+      jsonValue
+    }
+  }
+}
