@@ -1,0 +1,15 @@
+node_modules
+coverage
+.env
+.env.*
+.DS_Store
+*.log
+
+# Function build and typegen output
+extensions/*/dist
+extensions/*/build
+extensions/*/types
+
+# Created by shopify app dev
+.shopify/*
+.shopify.lock

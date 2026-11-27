@@ -1,0 +1,13 @@
+# Run `shopify app config link` to connect this repo to an app in your
+# Partner or Dev Dashboard. It fills in client_id and the name.
+
+client_id = ""
+name = "scripts-to-functions"
+application_url = "https://shopify.dev/apps/default-app-home"
+embedded = true
+
+[access_scopes]
+scopes = "write_delivery_customizations,write_discounts,write_payment_customizations"
+
+[webhooks]
+api_version = "2026-10"
