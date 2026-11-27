@@ -57,7 +57,7 @@ You need a Shopify Partner or Dev Dashboard account and a development store.
    npx shopify app dev
    ```
 
-4. Press `g` in the dev session to open GraphiQL and create the discount and customizations. The app has no admin UI, so they are created through the Admin API. `functionHandle` is the `handle` from each extension's TOML.
+4. Create the discount and customizations through the Admin API, since the app has no admin UI. Press `g` in the dev session to open GraphiQL, or save each mutation below to a file and run `npx shopify app execute --store <your-store>.myshopify.com --query-file <file>`. `functionHandle` is the `handle` from each extension's TOML.
 
 Tiered discount:
 
